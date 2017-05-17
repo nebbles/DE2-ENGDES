@@ -1,0 +1,13 @@
+# Python
+*.pyc
+
+# MATLAB
+*.m~
+
+# SOLIDWORKS
+~$*
+
+# Directories
+git-ignored/
+*-gi/
+.idea/
