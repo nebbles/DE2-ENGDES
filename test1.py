@@ -37,11 +37,11 @@ end_time = 0
 
 def fall_callback(channel):
     global fall, end_time
-    end_time = datetime.datetime.now()  # set the end time to current
+    end_time = time.time()  # set the end time to current
     fall = True
 def rise_callback(channel):
     global rise, start_time
-    start_time = datetime.datetime.now()  # set the end time to current
+    start_time = time.time()  # set the end time to current
     rise = True
 
 try:
@@ -64,6 +64,7 @@ try:
             pass
         print('ECHO received')
         dt = end_time - start_time  # calculate time difference
+        dt = dt *1.0* 10**6
         print(dt)  # print time difference
 
         # delay and then wait for user prompt to repeat
