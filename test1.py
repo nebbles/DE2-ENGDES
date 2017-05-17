@@ -30,9 +30,9 @@ GPIO.setup(TRIG2, GPIO.OUT)  # set as I/O output
 GPIO.setup(ECHO1, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(ECHO2, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
-raw_input('Set-up complete. Press any button to continue.')
-
 try:
+    raw_input('Set-up complete. Press any button to continue.')
+
     while True:
         print('Sending trigger')
         GPIO.output(TRIG1, GPIO.HIGH)  # Trigger goes high
