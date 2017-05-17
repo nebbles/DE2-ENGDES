@@ -11,6 +11,7 @@ AIMS
 
 import time
 import datetime
+import RPi.GPIO as GPIO
 
 print('Test 1 for ultrasonic range finder HC-SR04')
 
@@ -31,22 +32,26 @@ GPIO.setup(ECHO2, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 raw_input('Set-up complete. Press any button to continue.')
 
-while True:
-    print('Sending trigger')
-    GPIO.output(TRIG1, GPIO.HIGH)  # Trigger goes high
-    time.sleep(seconds / 1000000.0)  # delay by 20 micro-sec
-    GPIO.output(TRIG1, GPIO.LOW)  # trigger goes low
+try:
+    while True:
+        print('Sending trigger')
+        GPIO.output(TRIG1, GPIO.HIGH)  # Trigger goes high
+        time.sleep(20 / 1000000.0)  # delay by 20 micro-sec
+        GPIO.output(TRIG1, GPIO.LOW)  # trigger goes low
 
-    while not GPIO.input(ECHO2):  # while echo value low
-        start_time = datetime.datetime.now()  # set the start time to current
+        while not GPIO.input(ECHO2):  # while echo value low
+            start_time = datetime.datetime.now()  # set the start time to current
 
-    while GPIO.input(ECHO2):  # while echo value high
-        end_time = datetime.datetime.now()  # set the end time to current
+        while GPIO.input(ECHO2):  # while echo value high
+            end_time = datetime.datetime.now()  # set the end time to current
 
-    print('ECHO received')
+        print('ECHO received')
 
-    dt = end_time - start_time  # calculate time difference
-    print(dt)  # print time difference
+        dt = end_time - start_time  # calculate time difference
+        print(dt)  # print time difference
 
-    # delay and then wait for user prompt to repeat
-    raw_input('Press any key to repeat')
+        # delay and then wait for user prompt to repeat
+        raw_input('Press any key to repeat')
+
+finally:
+    GPIO.cleanup()
