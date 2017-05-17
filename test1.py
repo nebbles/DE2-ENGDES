@@ -36,8 +36,10 @@ try:
     while True:
         print('Sending trigger')
         GPIO.output(TRIG1, GPIO.HIGH)  # Trigger goes high
+        GPIO.output(TRIG2, GPIO.HIGH)  # Trigger goes high
         time.sleep(20 / 1000000.0)  # delay by 20 micro-sec
         GPIO.output(TRIG1, GPIO.LOW)  # trigger goes low
+        GPIO.output(TRIG2, GPIO.LOW)  # trigger goes low
 
         while not GPIO.input(ECHO2):  # while echo value low
             start_time = datetime.datetime.now()  # set the start time to current
