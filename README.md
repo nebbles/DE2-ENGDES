@@ -1,4 +1,10 @@
 # DE2-ENGDES
-Code and project repository for the DE2 Engineering Design Project
+Code and project repository for the DE2 Engineering Design Project of Group 10.
 
-Information on the Raspoberry Pi login information can be seen in [this seperate repository](https://github.com/nebbles/de2-gizmo-sound/wiki/Raspi-Admin).
+Project Group Members  *
+> Ina Backe Roll  
+> Shivam Bhatnagar (@1Shivam12)  
+> Benedict Greenberg (@nebbles)  
+> Kenza Zouitene
+
+Information on the **Raspberry Pi connection** information can be seen in [this seperate repository wiki](https://github.com/nebbles/de2-gizmo-sound/wiki/Raspi-Admin).
