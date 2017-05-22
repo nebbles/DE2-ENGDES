@@ -60,15 +60,16 @@ try:
         GPIO.output(TRIG1, GPIO.LOW)  # trigger goes low
         GPIO.output(TRIG2, GPIO.LOW)  # trigger goes low
 
-        while not fall and not rise:
+        while (fall is False) and (rise is False):
             pass
         print('ECHO received')
         dt = end_time - start_time  # calculate time difference
-        dt = dt *1.0* 10**6
+        dt = dt * 10.0**6  # convert into microseconds
         print(dt)  # print time difference
 
         # delay and then wait for user prompt to repeat
         raw_input('Press any key to repeat')
+        print('')
         rise = False
         fall = False
 except KeyboardInterrupt:
