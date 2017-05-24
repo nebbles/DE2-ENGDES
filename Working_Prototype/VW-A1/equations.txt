@@ -1,0 +1,2 @@
+﻿"Wall_Thickness"= 1
+"Cavity_Diameter"=40
