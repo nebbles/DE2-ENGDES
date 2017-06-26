@@ -56,7 +56,7 @@ try:
         print('Sending trigger')
         GPIO.output(TRIG1, GPIO.HIGH)  # Trigger goes high
         GPIO.output(TRIG2, GPIO.HIGH)  # Trigger goes high
-        time.sleep(20 / 1000000.0)  # delay by 20 micro-sec
+        # time.sleep(20 / 1000000.0)  # delay by 20 micro-sec
         GPIO.output(TRIG1, GPIO.LOW)  # trigger goes low
         GPIO.output(TRIG2, GPIO.LOW)  # trigger goes low
 
@@ -72,6 +72,8 @@ try:
         print('')
         rise = False
         fall = False
+        start_time = time.time()
+        end_time = time.time()
 except KeyboardInterrupt:
     GPIO.cleanup()
 finally:
